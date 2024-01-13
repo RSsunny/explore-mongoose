@@ -9,7 +9,9 @@ app.use(express.json());
 app.use(cors());
 
 // api
-
+app.get("/", async (req, res) => {
+  res.send("server is running");
+});
 app.listen(port, () => {
   console.log("server is running :", port);
 });
