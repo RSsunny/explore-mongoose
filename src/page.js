@@ -4,11 +4,15 @@ const connectDB = require("./db/connectDB");
 require("dotenv").config();
 const app = express();
 const port = process.env.PORT || 5000;
-const authRoutes = require("./routes/v1/authentication");
+const collection = process.env.DB_NAME;
+
+const authRoutes = require("./router/v1/authentication/index");
+const serviceRoute = require("./router/v1/service");
 
 applyMiddleware(app);
 
 app.use(authRoutes);
+app.use(serviceRoute);
 
 app.get("/health", async (req, res) => {
   res.send("server is running....");
