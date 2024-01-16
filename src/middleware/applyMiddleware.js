@@ -9,6 +9,7 @@ const applyMiddleware = (app) => {
     cors({
       origin: [LOCAL_CLIENT, CLIENT],
       credentials: true,
+      optionSuccessStatus: 200,
     })
   );
   app.use(express.json());

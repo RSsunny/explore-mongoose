@@ -2,7 +2,7 @@
   "name": "explore_mongoose",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/page.js",
   "scripts": {
     "start": "node src/page.js",
     "dev": "nodemon src/page.js",
