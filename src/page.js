@@ -4,8 +4,6 @@ const connectDB = require("./db/connectDB");
 require("dotenv").config();
 const app = express();
 const port = process.env.PORT || 5000;
-const collection = process.env.DB_NAME;
-
 const authRoutes = require("./router/v1/authentication/index");
 const serviceRoute = require("./router/v1/service");
 const globalErrorHandler = require("./utils/globalErrorhandlar");
