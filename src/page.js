@@ -8,6 +8,7 @@ const collection = process.env.DB_NAME;
 
 const authRoutes = require("./router/v1/authentication/index");
 const serviceRoute = require("./router/v1/service");
+const globalErrorHandler = require("./utils/globalErrorhandlar");
 
 applyMiddleware(app);
 
@@ -24,11 +25,7 @@ app.all("*", async (req, res, next) => {
   next(error);
 });
 
-app.use((err, req, res, next) => {
-  res.status(err.status || 500).json({
-    message: err.message,
-  });
-});
+app.use(globalErrorHandler);
 
 const main = async () => {
   await connectDB();
