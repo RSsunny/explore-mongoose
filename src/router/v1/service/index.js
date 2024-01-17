@@ -6,10 +6,11 @@ const {
   findOne,
   deletedata,
 } = require("../../../api/v1/service");
+const verifyToken = require("../../../middleware/verifyToken");
 
 const router = require("express").Router();
 
-router.get("/user/:id", findOne);
+router.get("/user/:id", verifyToken, findOne);
 router.get("/user", findMany);
 router.post("/user", createOne);
 router.post("/user/many", createMany);

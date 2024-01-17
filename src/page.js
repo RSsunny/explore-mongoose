@@ -1,7 +1,7 @@
 const express = require("express");
+require("dotenv").config();
 const applyMiddleware = require("./middleware/applyMiddleware");
 const connectDB = require("./db/connectDB");
-require("dotenv").config();
 const app = express();
 const port = process.env.PORT || 5000;
 const authRoutes = require("./router/v1/authentication/index");
