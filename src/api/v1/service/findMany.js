@@ -15,3 +15,5 @@ const findMany = async (req, res) => {
 };
 
 module.exports = findMany;
+
+// const cursor =await service.find(query,"id, title, des").sort({price : filter.sort==="asc"?1:-1})
